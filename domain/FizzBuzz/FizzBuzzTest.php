@@ -12,7 +12,7 @@ class FizzBuzzTest extends TestCase
             [0, 0],
             [1, 1],
             [2, 2],
-            [3, 3],
+            [3, "fizz"],
             [4, 4],
         ];
     }
@@ -33,7 +33,7 @@ class FizzBuzzTest extends TestCase
     {
         $fizzBuzz = new FizzBuzz();
 
-        $this->assertEquals($fizzBuzz->tombola($valeur), $valeur, "Problème sur la vérification numéric");
+        $this->assertEquals($fizzBuzz->tombola($valeur), $attendu, "Problème sur la vérification numéric");
     }
 
 
