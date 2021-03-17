@@ -17,13 +17,34 @@ class FizzBuzzTest extends TestCase
         ];
     }
 
+    public function exceptionProvider()
+    {
+        return [
+            ['a'],
+            ['+'],
+            ['@']
+        ];
+    }
+
     /**
      * @dataProvider tombolaProvider
      */
-    public function testFizzBuzz($valeur, $attendu)
+    public function testRetourneUnNombre($valeur, $attendu)
     {
         $fizzBuzz = new FizzBuzz();
 
-        $this->assertEquals($fizzBuzz->tombola($valeur), $valeur, "Problème sur la berification numéric");
+        $this->assertEquals($fizzBuzz->tombola($valeur), $valeur, "Problème sur la vérification numéric");
+    }
+
+
+    /**
+     * @dataProvider exceptionProvider
+     */
+    public function testRenvoiUneException($valeur)
+    {
+        $fizzBuzz = new FizzBuzz();
+
+        $this->expectException(FizzBuzzException::class);
+        $fizzBuzz->tombola($valeur);
     }
 }

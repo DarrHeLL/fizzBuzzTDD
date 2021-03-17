@@ -9,8 +9,7 @@ class FizzBuzz
         if (is_numeric($nombre)) {
             return $nombre;
         } else {
-            $excpetion = new \Exception("Le paramètre donné n'est pas un nombre");
-            Throw $excpetion;
+            Throw new FizzBuzzException("Le paramètre donné n'est pas un nombre", 10001);
         }
     }
 }
